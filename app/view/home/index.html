@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome use Cae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    h1 {
+      text-align: center;
+      color: #E91E63;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>{{ message }}</h1>
+
+  <pre>{{ posts }}</pre>
+
+  <form action="/home/upload" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="{{ $csrf }}">
+    <select name="occ" id="occ">
+      {% for occ in occs %}
+      <option value="{{ occ.mid }}">{{ occ.mname }}</option>
+      {% endfor %}
+    </select>
+    <input type="file" name="file" multiple>
+    <input type="submit" value="上传">
+  </form>
+
+</body>
+
+</html>

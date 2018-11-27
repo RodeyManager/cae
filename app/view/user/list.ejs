@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome use Cae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1> User List </h1>
+  <% if(users) { %>
+
+  <% users.forEach(function(user){ %>
+  <p>
+    <%= user.username %>
+  </p>
+  <% }) %>
+  <% } %>
+
+  <p>CSRF:
+    <%= _CSRF_ %>
+  </p>
+</body>
+
+</html>
