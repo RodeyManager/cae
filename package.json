@@ -1,6 +1,6 @@
 {
   "name": "cae",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于Koa的MVC框架",
   "main": "index.js",
   "author": "Rodey Luo",
@@ -14,6 +14,7 @@
     "got": "^9.3.2",
     "is-plain-object": "^2.0.4",
     "is-type-of": "^1.2.1",
+    "jsonwebtoken": "^8.4.0",
     "koa": "^2.6.1",
     "koa-body": "^4.0.4",
     "koa-csrf": "^3.0.6",

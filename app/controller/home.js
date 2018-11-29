@@ -7,6 +7,7 @@ const {
 class HomeController extends BaseController {
 
   async index(query) {
+
     const occ = await this.fetch.ecs.get('getOcc');
     // this.ctx.body = `Home -> Index: \n${JSON.stringify(query, null, 2)}`;
     // console.log(this.M.post);

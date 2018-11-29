@@ -22,15 +22,11 @@ exports.session = {
 };
 
 // 关闭CSRF
-exports.csrf = true;
+exports.csrf = false;
 
 // JWT
 exports.jwt = {
-  secret: 'cae-application',
-  // 排除
-  unless: {
-    path: [/^\/(assets|home|user|post)/]
-  }
+  secret: 'cae-application-asd434ad34234',
 };
 
 // body-parse 配置 https://www.npmjs.com/package/koa-body

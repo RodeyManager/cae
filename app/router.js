@@ -1,17 +1,22 @@
 'use strict';
 const uploader = require('./middleware/uploader');
+const {
+  createToken,
+  authenticationToken
+} = require('./middleware/jwt');
 
 module.exports = app => {
 
   const {
     router,
     config,
-    jwt,
   } = app;
 
   router.get('/', 'home.index');
   router.get('/home/', 'home.index');
   router.post('/home/upload', uploader(config.get('uploadDir'), app), 'home.upload');
+
+  router.post('/login', createToken(app), 'login.login');
 
   // user module
   router.module('/user', _ => {
@@ -34,7 +39,7 @@ module.exports = app => {
   router.module('/post', _ => {
     router.get('/', 'post.index');
     router.get('/:id', 'post.info');
-    router.post('/add', 'post.add');
+    router.post('/add', authenticationToken(app), 'post.add');
   });
 
 };

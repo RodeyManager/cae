@@ -6,17 +6,28 @@ const {
 class PostController extends BaseController {
 
   async index() {
-    this.ctx.body = `Post -> Index`;
+    this.body = `Post -> Index`;
   }
 
   async add() {
-    this.ctx.body = 'Post -> Add';
+    const {
+      title,
+      content,
+      uuid = 0
+    } = this.ctx.request.body;
+    const post = {
+      title,
+      content,
+      uuid
+    };
+    const rs = await this.model.create(post);
+    this.body = rs;
   }
 
   async info({
     id
   }) {
-    this.ctx.body = `Post -> Info: ${id}`;
+    this.body = `Post -> Info: ${id}`;
   }
 
 }
