@@ -42,9 +42,15 @@ class UserController extends BaseController {
     } else {
       user = `User -> Info: not user`;
     }
-    this.render('user/info', {
+    // this.render('user/info', {
+    //   user
+    // });
+
+    // 支持多渲染引擎
+    this.V.ejs.render('user/info', {
       user
-    });
+    }, (body) => this.body = body);
+
     // 支持多渲染引擎
     // const body = await this.V.ejs.render('user/info', {
     //   user,

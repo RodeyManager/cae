@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 12px;
+  font-family: Microsoft YaHei;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: white url(/assets/images/background.png);
+  background-size: 30px 30px;
+  transition: all 0.25s ease;
+}
+
+:fullscreen a {
+  transition: transform 1s;
+}

@@ -9,12 +9,28 @@
  * @views 配置必须是Array
  */
 
-exports.views = [{
+exports.view = [{
   name: 'ejs',
   engine: require('ejs'),
   path: 'app/view',
   ext: '.ejs'
 }];
+// 模板文件预编译缓存, 默认false
+exports.viewPrecompile = true;
+
+/**
+ * 转换器
+ */
+exports.converter = {
+  // 图片src转base64输出,
+  // maxCache 最大缓存数
+  // limit 最大支持图片的大小 单位 bytes
+  image: {
+    test: /.(png|jpg)$/,
+    maxCache: 100,
+    limit: 10 * 1024,
+  },
+};
 
 // 开启session
 exports.session = {
@@ -30,7 +46,7 @@ exports.jwt = {
 };
 
 // body-parse 配置 https://www.npmjs.com/package/koa-body
-// 系统默认 multipart: true
+// 系统默认 multipart: true; formLimit: 2 * 1024 * 1024 (2m)
 exports.bodyParser = {};
 
 // 上传文件目录

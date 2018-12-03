@@ -6,16 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Welcome use Cae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/app.css">
   <style>
     h1 {
       text-align: center;
       color: #E91E63;
+    }
+    img {
+      display: block;
+      margin: 10px auto;
+    }
+    pre {
+      max-width: 500px;
+      max-height: 400px;
+      overflow: auto;
+      margin: 20px 0;
     }
   </style>
 </head>
 
 <body>
   <h1>{{ message }}</h1>
+  <p><img src="/assets/images/light-icon.png?345234" alt=""></p>
 
   <pre>{{ posts }}</pre>
 
@@ -29,6 +41,8 @@
     <input type="file" name="file" multiple>
     <input type="submit" value="上传">
   </form>
+
+  <script src="/assets/js/main.js"></script>
 
 </body>
 
