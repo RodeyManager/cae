@@ -1,6 +1,6 @@
 {
   "name": "cae",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于Koa的MVC框架",
   "main": "index.js",
   "author": "Rodey Luo",
@@ -32,7 +32,8 @@
     "nunjucks": "^3.1.3",
     "recursive-readdir": "^2.2.2",
     "sequelize": "^4.41.0",
-    "winston": "^3.1.0"
+    "winston": "^3.1.0",
+    "worker-farm": "^1.6.0"
   },
   "devDependencies": {
     "babel-plugin-transform-decorators": "^6.24.1",

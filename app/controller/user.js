@@ -49,13 +49,11 @@ class UserController extends BaseController {
     // 支持多渲染引擎
     this.V.ejs.render('user/info', {
       user
-    }, (body) => this.body = body);
-
-    // 支持多渲染引擎
-    // const body = await this.V.ejs.render('user/info', {
+    }, this.ctx);
+    // OR
+    // this.V.ejs.render('user/info', {
     //   user,
-    // });
-    // this.body = body;
+    // }, body => this.body = body);
   }
 
 }

@@ -5,5 +5,5 @@ module.exports = {
   BaseController: require('./lib/core/controller'),
   BaseService: require('./lib/core/service'),
   BaseModel: require('./lib/core/model'),
-  EVENT: require('./lib/event_types')
+  EVENT: require('./lib/util/event_types')
 };

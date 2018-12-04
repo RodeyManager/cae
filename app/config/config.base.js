@@ -6,15 +6,17 @@
  * 支持多模板引擎，多模板引擎是，controller中使用: this.views.ejs.render
  * 系统采用nunjucks作为默认模板渲染引擎
  * see: https: //mozilla.github.io/nunjucks/
- * @views 配置必须是Array
+ * @views 配置 ${Array|Object}
  */
 
 exports.view = [{
   name: 'ejs',
   engine: require('ejs'),
   path: 'app/view',
-  ext: '.ejs'
+  ext: '.ejs',
+  default: false // 系统默认启用
 }];
+
 // 模板文件预编译缓存, 默认false
 exports.viewPrecompile = true;
 
@@ -25,11 +27,11 @@ exports.converter = {
   // 图片src转base64输出,
   // maxCache 最大缓存数
   // limit 最大支持图片的大小 单位 bytes
-  image: {
-    test: /.(png|jpg)$/,
-    maxCache: 100,
-    limit: 10 * 1024,
-  },
+  // image: {
+  //   test: '.(png|jpg)$',
+  //   maxCache: 100,
+  //   limit: 10 * 1024,
+  // },
 };
 
 // 开启session

@@ -12,6 +12,8 @@ module.exports = app => {
     config,
   } = app;
 
+  router.get('error/404', 'error.action404');
+
   router.get('/', 'home.index');
   router.get('/home/', 'home.index');
   router.post('/home/upload', uploader(config.get('uploadDir'), app), 'home.upload');

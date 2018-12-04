@@ -1,0 +1,14 @@
+.page-404 {
+  text-align: center;
+}
+
+.page-404 h1 {
+  font-size: 18em;
+  text-align: center;
+  color: #E91E63;
+}
+
+.page-404 p {
+  font-size: 14px;
+  color: dimgray;
+}
