@@ -17,18 +17,19 @@ exports.view = [{
   default: false // 系统默认启用
 }];
 
-// 模板文件预编译缓存, 默认false
-exports.viewPrecompile = true;
+// 停用模板文件预编译缓存
+// exports.viewPrecompile = false;
 
 /**
- * 转换器
+ * 模板相关转换器
+ * 包括：image、style、script、template
+ * @param {String} test 匹配规则
+ * @param {Number} maxCache 最大缓存数
+ * @param {Number} limit 最大支持的文件大小 单位 bytes
  */
-exports.converter = {
-  // 图片src转base64输出,
-  // maxCache 最大缓存数
-  // limit 最大支持图片的大小 单位 bytes
+exports.viewConverter = {
   // image: {
-  //   test: '.(png|jpg)$',
+  //   test: '.(png|jpg|svg)$',
   //   maxCache: 100,
   //   limit: 10 * 1024,
   // },

@@ -33,15 +33,23 @@
 
   <form action="/home/upload" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_csrf" value="{{ $csrf }}">
-    <select name="occ" id="occ">
-      {% for occ in occs %}
-      <option value="{{ occ.mid }}">{{ occ.mname }}</option>
-      {% endfor %}
-    </select>
-    <input type="file" name="file" multiple>
-    <input type="submit" value="上传">
+    <p>
+      <input type="file" name="file" multiple>
+      <input type="submit" value="上传">
+    </p>
+    <p>
+      <label for="city">查看天气: </label>
+      <select name="city" id="city">
+        {% for city in citys %}
+        <option value="{{ city.city_code }}">{{ city.city_name }}</option>
+        {% endfor %}
+      </select>
+    </p>
   </form>
 
+  <pre id="water-info"></pre>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="/assets/js/main.js"></script>
 
 </body>

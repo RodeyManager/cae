@@ -16,6 +16,7 @@ module.exports = app => {
 
   router.get('/', 'home.index');
   router.get('/home/', 'home.index');
+  router.get('/home/water', 'home.water');
   router.post('/home/upload', uploader(config.get('uploadDir'), app), 'home.upload');
 
   router.post('/login', createToken(app), 'login.login');

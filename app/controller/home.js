@@ -7,12 +7,12 @@ const {
 class HomeController extends BaseController {
 
   async index(query) {
-    let occ;
+    let citys;
     try {
-      occ = await this.fetch.ecs.get('getOcc');
+      citys = await this.fetch.sojson.get('_city.json');
     } catch (e) {
-      console.error('Fetch get [getOcc]: ', e.message);
-      occ = {};
+      console.error('Fetch get [_city.json]: ', e.message);
+      citys = [];
     }
     // this.ctx.body = `Home -> Index: \n${JSON.stringify(query, null, 2)}`;
     // console.log(this.M.post);
@@ -21,8 +21,21 @@ class HomeController extends BaseController {
     this.render('home/index', {
       message: 'Welcome use Cae.js',
       posts: JSON.stringify(posts, null, 4),
-      occs: occ && occ.body && occ.body.data || [],
+      citys: citys && citys.body && citys.body.slice(0, 100).filter(item => item.city_code) || [],
     });
+  }
+
+  async water({
+    city
+  }) {
+    let result;
+    try {
+      result = await this.fetch.sojson.get(`http://t.weather.sojson.com/api/weather/city/${city}`);
+    } catch (e) {
+      console.error('Fetch get [home/water]: ', e.message);
+      result = {};
+    }
+    this.body = result && result.body || {};
   }
 
   async upload() {

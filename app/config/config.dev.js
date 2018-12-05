@@ -60,11 +60,8 @@ exports.provider = {
       'x-unicorn': 'rainbow'
     }
   },
-  ecs: {
-    baseUrl: 'https://esales.test-cignacmb.com/esales/',
+  sojson: {
+    baseUrl: 'http://cdn.sojson.com',
     json: true
   },
-  epay: {
-    baseUrl: 'https://epay.test-cignacmb.com/epayment/'
-  }
 };
