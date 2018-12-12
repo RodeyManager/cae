@@ -3,15 +3,18 @@
 const {
   BaseController
 } = require('../../index');
-// const moment = require('moment');
+const moment = require('moment');
 
 class LoginController extends BaseController {
 
   async index() {
-    this.body = "login page";
+    console.log(this.ctx.route)
+    this.render('login/index', {
+      message: this.route.title
+    });
   }
 
-  async login() {
+  async signIn() {
     const {
       email,
       password
@@ -21,14 +24,16 @@ class LoginController extends BaseController {
       token
     } = this.ctx.state;
 
-    // this.ctx.cookies.set('token', token, {
-    //   expires: moment().add(30, 'minutes').toDate()
-    // });
+    this.ctx.cookies.set('token', token, {
+      expires: moment().add(30, 'minutes').toDate()
+    });
 
-    this.body = {
-      email,
-      token
-    };
+    this.redirect('/');
+
+    // this.body = {
+    //   email,
+    //   token
+    // };
   }
 }
 

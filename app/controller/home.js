@@ -7,6 +7,7 @@ const {
 class HomeController extends BaseController {
 
   async index(query) {
+
     let citys;
     try {
       citys = await this.fetch.sojson.get('_city.json');
@@ -25,6 +26,7 @@ class HomeController extends BaseController {
     });
   }
 
+
   async water({
     city
   }) {
@@ -32,7 +34,7 @@ class HomeController extends BaseController {
     try {
       result = await this.fetch.sojson.get(`http://t.weather.sojson.com/api/weather/city/${city}`);
     } catch (e) {
-      console.error('Fetch get [home/water]: ', e.message);
+      console.error('Fetch get [/home/water]: ', e.message);
       result = {};
     }
     this.body = result && result.body || {};
@@ -40,7 +42,8 @@ class HomeController extends BaseController {
 
   async upload() {
     // console.log(this.ctx.request.files);
-    this.body = 'body---';
+    // console.log(this.ctx.state.files);
+    this.body = 'body---' + this.ctx.state.files;
   }
 
 }

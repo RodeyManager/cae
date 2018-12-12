@@ -1,6 +1,8 @@
 'use strict';
 const baseConfig = require('./config.base');
 
+const routers = require('../router');
+
 module.exports = (env, app) => {
 
   let config = {};
@@ -9,7 +11,8 @@ module.exports = (env, app) => {
   } catch (e) {}
   return {
     ...baseConfig,
-    ...config
+    ...config,
+    routers,
   };
 
 };

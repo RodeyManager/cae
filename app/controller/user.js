@@ -31,6 +31,7 @@ class UserController extends BaseController {
   async info({
     username
   }) {
+    console.log(username);
     let user = await this.model.findOne({
       where: {
         username

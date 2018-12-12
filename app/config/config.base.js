@@ -18,7 +18,7 @@ exports.view = [{
 }];
 
 // 停用模板文件预编译缓存
-// exports.viewPrecompile = false;
+// exports.viewConverter = false;
 
 /**
  * 模板相关转换器
@@ -27,13 +27,13 @@ exports.view = [{
  * @param {Number} maxCache 最大缓存数
  * @param {Number} limit 最大支持的文件大小 单位 bytes
  */
-exports.viewConverter = {
-  // image: {
-  //   test: '.(png|jpg|svg)$',
-  //   maxCache: 100,
-  //   limit: 10 * 1024,
-  // },
-};
+// exports.viewConverter = {
+// image: {
+//   test: '.(png|jpg|svg)$',
+//   maxCache: 100,
+//   limit: 10 * 1024,
+// },
+// };
 
 // 开启session
 exports.session = {
@@ -54,4 +54,4 @@ exports.bodyParser = {};
 
 // 上传文件目录
 // 相对路径以项目目录为起始
-exports.uploadDir = 'app/assets/uploader';
+exports.uploadDir = 'app/assets/uploads';
