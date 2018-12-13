@@ -10,7 +10,8 @@ class HomeController extends BaseController {
 
     let citys;
     try {
-      citys = await this.fetch.sojson.get('_city.json');
+      // this.P = this.providers = app.provider
+      citys = await this.P.sojson.get('_city.json');
     } catch (e) {
       console.error('Fetch get [_city.json]: ', e.message);
       citys = [];
@@ -32,7 +33,7 @@ class HomeController extends BaseController {
   }) {
     let result;
     try {
-      result = await this.fetch.sojson.get(`http://t.weather.sojson.com/api/weather/city/${city}`);
+      result = await this.P.sojson.get(`http://t.weather.sojson.com/api/weather/city/${city}`);
     } catch (e) {
       console.error('Fetch get [/home/water]: ', e.message);
       result = {};
